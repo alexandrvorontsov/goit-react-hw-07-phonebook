@@ -2,11 +2,8 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
-import { selectItems } from 'redux/selectors';
-import { selectNameData } from 'redux/selectors';
-import { selectNumberData } from 'redux/selectors';
-import { setNameData } from 'redux/slice';
-import { setNumberData } from 'redux/slice';
+import { selectItems, selectNameData, selectNumberData } from 'redux/selectors';
+import { setNameData, setNumberData } from 'redux/slice';
 import {
   BodyForm,
   LabelForm,

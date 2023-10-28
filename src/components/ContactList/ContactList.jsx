@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchContacts, removeContacts } from 'redux/operations';
+import { fetchContacts, deleteContacts } from 'redux/operations';
 import { selectContacts } from 'redux/selectors';
 import {
   BodyList,
@@ -20,8 +19,8 @@ export const ContactList = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  const handleRemoveContact = evt => {
-    dispatch(removeContacts(evt.target.id));
+  const handleDeleteContact = evt => {
+    dispatch(deleteContacts(evt.target.id));
   };
 
   return (
@@ -40,7 +39,7 @@ export const ContactList = () => {
                   <ListButton
                     type="button"
                     id={contact.id}
-                    onClick={handleRemoveContact}
+                    onClick={handleDeleteContact}
                   >
                     Delete
                   </ListButton>
