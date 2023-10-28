@@ -1,7 +1,7 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
+import { requestAddContact } from 'redux/operations';
 import { selectItems, selectNameData, selectNumberData } from 'redux/selectors';
 import { setNameData, setNumberData } from 'redux/slice';
 import {
@@ -37,7 +37,7 @@ export const ContactForm = () => {
     if (contacts.some(contact => contact.name.includes(name))) {
       alert(`${name} is already in contacts`);
     } else {
-      dispatch(addContact({ name, number, id: nanoid() }));
+      dispatch(requestAddContact({ name, number, id: nanoid() }));
       resetForm();
     }
   };
