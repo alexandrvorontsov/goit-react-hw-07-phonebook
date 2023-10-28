@@ -6,7 +6,6 @@ export const postDetailsConfig = {
   key: 'contacts',
   storage,
   whitelist: ['contacts'],
-  //   blacklist: ['filter'],
 };
 
 export const store = configureStore({
