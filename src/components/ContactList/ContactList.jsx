@@ -26,19 +26,19 @@ export const ContactList = () => {
   return (
     <div>
       <BodyList>
-        {items?.length > 0 &&
+        {items !== null &&
           items
             .filter(contact =>
               contact?.name?.toLowerCase().includes(filter.toLowerCase())
             )
-            .map(contact => {
+            .map(({ id, name, number }) => {
               return (
-                <ListItem key={contact.id}>
-                  <span>{contact.name}: </span>
-                  <span>{contact.number}</span>
+                <ListItem key={id}>
+                  <span>{name}: </span>
+                  <span>{number}</span>
                   <ListButton
                     type="button"
-                    id={contact.id}
+                    id={id}
                     onClick={handleDeleteContact}
                   >
                     Delete
